@@ -1,12 +1,52 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@500&display=swap');
+
+html{
+  font-size: 16px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+body{
+  background: #282828;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Navbar */
+
+nav {
+  // position: absolute;
+  // width: 100vw;
+  // height: 52px;
+  // top: 3px;
+  background: #101010;
+}
+
+.container-fluid {
+  width: 87.986vw;
+}
+
+.navbar-brand {
+  // position: absolute;
+  // left: 6.11%;
+  // right: 79.65%;
+  // top: 0.47%;
+  // bottom: 98.52%;
+
+  font-family: 'Poppins';
+  // font-style: normal;
+  // font-weight: 700;
+  font-size: 22px;
+  // line-height: 108.96%;
+  /* identical to box height, or 24px */
+
+
+  color: #7A3BFF;
+}
+
+.nav-link {
+  font-family: 'Mada';
+  font-size: 18px;
+}
+
+.navbar-nav .nav-link.active {
+  color: #A8A6FF
+  ;
 }
