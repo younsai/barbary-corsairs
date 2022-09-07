@@ -47,6 +47,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_112227) do
     t.text "terms"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "accepted_vulnerabilities"
+    t.text "excluded_vulnerabilities"
+    t.text "program_perimeter"
+    t.text "vulnerability_levels"
+    t.string "bouty_range"
   end
 
   create_table "users", force: :cascade do |t|

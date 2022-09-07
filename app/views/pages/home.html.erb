@@ -1,9 +1,96 @@
-<div class="hero-image">
-  <div>
-    <p>The corsairs are here to protect your data.</p>
-    <button>SECURE  YOU COMPANY</button>
-    <p>Barabary Corsairs is a bug bounty program platform
-    where companies can challenge the best cyberpirates to
-    penetrate their IT infrastructures.</p>
+<div class="hero-image col-xxl-8 px-4 py-5">
+  <div class = "row flex-lg-row align-items-center g-5 py-2 px-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <p>The corsairs are here to <span>protect your data.</span></p>
+      <div class="d-flex w-100 justify-content-center">
+        <%= link_to 'SECURE YOUR COMPANY', new_program_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <p>Barabary Corsairs is a <span>bug bounty program platform</span>
+      where companies can challenge the best cyberpirates to
+      penetrate their IT infrastructures.</p>
+      <div class="d-flex w-100 justify-content-center">
+        <button class="btn btn-outline-primary">JOIN THE CORSAIRS</button>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="container">
+  <%# <div class="container py-5">
+      <div class="row flex-lg-row align-items-center g-5 py-5">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold lh-1 mb-3 purple-font">Penetration Testing </h1>
+          <p class="lead">The pirates will try to <span class="purple-font">hack</span> the IT infrastructure of companies  in order to discover the weaknesses it contains. Then, they point them out to the company. This enables companies to address your weaknesses and prevent getting hacked by an intruder.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <p class="lead">See the full process <a href="" class="purple-font">here</a>.</p>
+          </div>
+        </div>
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="https://res.cloudinary.com/younsai/image/upload/v1662550524/penetration-testing-img_k4gjra.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div> %>
+
+    <div class="">
+      <div class="">
+        <h1 class="">Penetration Testing </h1>
+        <p class="lead">The pirates will try to <span class="purple-font">hack</span> the IT infrastructure of companies  in order to discover the weaknesses it contains. Then, they point them out to the company. This enables companies to address your weaknesses and prevent getting hacked by an intruder.</p>
+        <div class="">
+          <p class="lead">See the full process <a href="" class="purple-font">here</a>.</p>
+        </div>
+      </div>
+      <div class="">
+        <img src="https://res.cloudinary.com/younsai/image/upload/v1662550524/penetration-testing-img_k4gjra.png" class="w-100" alt="Bootstrap Themes" loading="lazy">
+      </div>
+    </div>
+
+  <%# <div class="container py-5">
+    <h1 class="display-5 fw-bold lh-1 mb-3 purple-font">The crew of  the week</h1>
+    <div class="row">
+      <div class="card col-lg-3" id="reis">
+        <h5>THE REIS</h5>
+        <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_1_kublew.png" alt="">
+        <h6>Name</h6>
+      </div>
+
+      <div class="card col-lg-3">
+        <h5></h5>
+        <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_2_psffte.png" alt="">
+        <h6>Name</h6>
+      </div>
+
+      <div class="card col-lg-3">
+        <h5></h5>
+        <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_3_o4wrtf.png" alt="">
+        <h6>Name</h6>
+      </div>
+
+      <div class="card col-lg-3">
+        <h5></h5>
+        <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_6_z4xonh.png" alt="">
+        <h6>Name</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+      <h1 class="display-5 fw-bold lh-1 mb-3 purple-font">Companies on the platform</h1>
+      <div class="row d-flex justify-content-between pt-5">
+        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
+        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
+        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
+        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
+      </div>
+  </div>
+
+  <div class="container" >
+    <h1 class="display-5 fw-bold lh-1 mb-3 purple-font proporsal">Have a proposal for us? Send it <a href="#" id="here">here</a>!</h1>
+  </div>
+
+
+</div>
+<%= current_user %>
+<%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete}%> %>

@@ -1,18 +1,133 @@
 // Specific CSS for your home-page
-body, html {
-  height: 100%;
-}
 
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: url("https://res.cloudinary.com/younsai/image/upload/v1662480879/hero-img_bm2tt7.png");
   /* Set a specific height */
-  height: 541px;
+  height: fit-content;
+  width: 100vw;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.col-lg-6 {
+  height: 100%;
+}
+
+.col-lg-6:first-child p{
+  font-family: 'Poppins';
+  color: #5200FF;
+  font-size: 5.21vh;
+  font-weight: 700;
+}
+
+.col-lg-6:nth-child(2) p span{
+  color: #5200FF;
+}
+
+.col-lg-6:nth-child(2) p{
+  font-family: 'Poppins';
+  font-weight: lighter;
+  font-size: 34px;
+  letter-spacing: 3px;
+}
+.btn {
+  background-color: #7A3BFF;
+  border-color: #7A3BFF;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background-color: #5200FF;
+  border-color: #5200FF;
+}
+
+.btn.btn-outline-primary {
+  background-color: transparent;
+  color: #5200FF;
+  border-color: #5200FF;
+}
+
+.btn.btn-outline-primary:hover {
+  background-color: #5200FF;
+  color: #FFFFFF;
+  border-color: #5200FF;
+}
+
+div.col-lg-6 > p.lead, .d-grid.gap-2.d-md-flex.justify-content-md-start > p.lead {
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+h1.display-5.fw-bold.lh-1.mb-3{
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 44px;
+
+}
+
+.purple-font{
+  color: #7A3BFF;
+}
+
+div.col-lg-4 {
+  text-align: center;
+}
+
+.col-lg-6 img {
+  width: 140px;
+}
+
+.container .row {
+  height: fit-content;
+}
+
+.container .row .card {
+  height: 100%;
+  background-color: transparent;
+  text-align: center;
+  padding: 18px 65px;
+  font-size: 24px;
+  border: none;
+  height: 280px;
+}
+
+.container .row .card img {
+  width: 140px;
+  height: 140px;
+  margin: 13px auto;
+}
+#reis{
+  border: 5px solid #573BFF
+}
+
+.container .row .card h5{
+  color: #E9C5FF;
+}
+
+.container .row .card h6 {
+  color: #A8A6FF;
+  font-size: 16px;
+}
+
+.row img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.col-lg-3 {
+  text-align: center;
+}
+
+#here{
+  color: #FFEB3B;
+}
+
+.proposal {
+  font-size: 50px;
 }
