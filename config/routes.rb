@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
+  get '/my_programs', to: 'programs#my_programs', as: 'my_programs'
+  resources :programs do
+    resources :reports
+  end
+
   get "/about", to: "pages#about", as: 'about'
-  resources :programs
+
   resources :experts
   resources :companies
   devise_for :users

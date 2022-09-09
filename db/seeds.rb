@@ -43,3 +43,15 @@ Expert.create(
   idendity_photo: "string",
   user_id: u3.id
 )
+
+5.times do
+  Program.create(
+    title: "Test",
+    terms: Faker::String.random,
+    accepted_vulnerabilities: 'Test',
+    excluded_vulnerabilities: 'Test',
+    vulnerability_levels: 'Test',
+    bouty_range: 'Test',
+    company: Company.all.sample
+  )
+end

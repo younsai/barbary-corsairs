@@ -1,10 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @program %>
-
 <div>
-  <%= link_to "Edit this program", edit_program_path(@program) %> |
-  <%= link_to "Back to programs", programs_path %>
+  <%= @program.title %>
+  <%= @program.company.company_name %>
 
+  <%= @program.terms %>
+
+  <% if  @program.company.user == current_user %>
+  <%= link_to "Edit this program", edit_program_path(@program) %>
+  <%= link_to "Back to programs", programs_path %>
   <%= button_to "Destroy this program", @program, method: :delete %>
+  <% end %>
+  <%= link_to "Report", new_program_report_path(@program) %>
+  <% @program.reports.each do |report| %>
+    <li>
+      <%= report.summary %> |
+      <% if report.expert.user == current_user %>
+        <%= link_to 'Edit', edit_program_report_path(@program, report) %> || <%= link_to "Delete", program_report_path(@program, report), data: {turbo_method: :delete} %>
+      <% end %>
+    </li>
+  <% end %>
+
 </div>

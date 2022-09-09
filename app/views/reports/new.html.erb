@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Report</h1>
+  <%= simple_form_for [@program, @report] do |f| %>
+    <%= f.input :summary %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
