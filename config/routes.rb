@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
 
   get "/about", to: "pages#about", as: 'about'
+  get "/contact", to: "pages#ontact", as: 'contact'
+  resources :programs
 
   resources :experts
   resources :companies

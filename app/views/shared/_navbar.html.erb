@@ -8,10 +8,10 @@
 
     <div class="collapse navbar-collapse flex-grow-0" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <%= link_to 'Home', root_path, class:"nav-link active" %>
-        <%= link_to 'Programs', programs_path, class:"nav-link" %>
-        <%= link_to 'About', about_path, class:'nav-link' %>
-        <a class="nav-link">Contact</a>
+        <%= link_to 'Home', root_path, class:"nav-link #{current_page?(root_path) ? 'active' : ''}" %>
+        <%= link_to 'Programs', programs_path, class:"nav-link #{current_page?(programs_path) ? 'active' : ''}" %>
+        <%= link_to 'About', about_path, class:"nav-link #{current_page?(about_path) ? 'active' : ''}" %>
+        <%= link_to 'Contact', contact_path, class:"nav-link #{current_page?(contact_path) ? 'active' : ''}" %>
       </div>
     </div>
   </div>

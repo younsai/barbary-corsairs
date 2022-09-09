@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_130346) do
     t.text "accepted_vulnerabilities"
     t.text "excluded_vulnerabilities"
     t.text "vulnerability_levels"
-    t.string "bouty_range"
+    t.string "bounty_range"
     t.index ["company_id"], name: "index_programs_on_company_id"
     t.index ["report_perimeter_id"], name: "index_programs_on_report_perimeter_id"
   end

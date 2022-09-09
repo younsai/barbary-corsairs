@@ -1,6 +1,8 @@
 class ProgramsController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:index, :show]
   before_action :set_program, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: %i[index]
+
 
   # GET /programs or /programs.json
   def index
