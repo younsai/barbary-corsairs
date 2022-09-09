@@ -1,0 +1,47 @@
+.card-wrapper{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .program-card{
+    transition: all 1s;
+    margin: 32px;
+    border-radius: 16px;
+    overflow:hidden;
+    &:hover{
+      transform:scale(1.1)
+    }
+    h3{
+      color: black;
+      font-weight: 800;
+    }
+    img{
+      width: 320px;
+      height: 240px;
+    }
+    .program-details{
+      padding: 16px;
+      background-color: white;
+      width: 320px;
+      .program-bounty{
+        display:flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        button{
+          background-color: #2ECC71;
+          border-color: #2ECC71;
+          border-radius: 8px;
+          &:hover{
+            background-color: lightgreen;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.title{
+  text-align: center;
+  margin-top: 32px;
+}

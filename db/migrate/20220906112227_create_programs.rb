@@ -10,6 +10,6 @@ class CreatePrograms < ActiveRecord::Migration[7.0]
     add_column :programs, :excluded_vulnerabilities, :text
     add_column :programs, :program_perimeter, :text
     add_column :programs, :vulnerability_levels, :text
-    add_column :programs, :bouty_range, :string
+    add_column :programs, :bounty_range, :string
   end
 end

@@ -8,6 +8,7 @@
 User.destroy_all
 Company.destroy_all
 Expert.destroy_all
+Program.destroy_all
 
 
 u1 = User.create(email: 'tst@tst.ma', password: '121212')
@@ -31,10 +32,10 @@ Company.create(
 )
 
 Expert.create(
-  first_name: "string",
-  last_name: "string",
-  username: "string",
-  github_account: "string",
+  first_name: "said",
+  last_name: "mouslih",
+  username: "samou",
+  github_account: "github.com/samou",
   twitter: "string",
   cv: "string",
   website_portfolio: "string",
@@ -43,3 +44,15 @@ Expert.create(
   idendity_photo: "string",
   user_id: u3.id
 )
+
+9.times do
+Program.create(
+  title: "the bounty",
+  terms: "get it done yesterday!",
+  accepted_vulnerabilities: "backdoors,sqlinjection,bruteforce",
+  excluded_vulnerabilities: "bugs",
+  program_perimeter: "yes",
+  vulnerability_levels: "1-10",
+  bounty_range: "100-10000 euros"
+)
+end
