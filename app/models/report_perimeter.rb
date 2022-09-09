@@ -1,0 +1,2 @@
+class ReportPerimeter < ApplicationRecord
+end

@@ -1,4 +1,5 @@
 class ProgramsController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index, :show]
   before_action :set_program, only: %i[ show edit update destroy ]
 
   # GET /programs or /programs.json
@@ -57,14 +58,19 @@ class ProgramsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_program
-      @program = Program.find(params[:id])
-    end
+  def my_programs
+    @my_programs = Program.where("company.user = ?", current_user)
+  end
 
-    # Only allow a list of trusted parameters through.
-    def program_params
-      params.require(:program).permit(:tittle)
-    end
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_program
+    @program = Program.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def program_params
+    params.require(:program).permit(:title)
+  end
 end
