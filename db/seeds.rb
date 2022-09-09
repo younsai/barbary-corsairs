@@ -48,11 +48,12 @@ Expert.create(
 9.times do
 Program.create(
   title: "the bounty",
-  terms: "get it done yesterday!",
+  terms: Faker::String.random,
   accepted_vulnerabilities: "backdoors,sqlinjection,bruteforce",
   excluded_vulnerabilities: "bugs",
-  program_perimeter: "yes",
   vulnerability_levels: "1-10",
-  bounty_range: "100-10000 euros"
+  bounty_range: "100-10000 euros",
+  company: Company.all.sample
 )
+
 end

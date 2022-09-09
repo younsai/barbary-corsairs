@@ -8,13 +8,14 @@
         <img src="https://ichef.bbci.co.uk/images/ic/1920x1080/p03t1sm8.jpg" alt="">
       </div>
       <div class="program-details">
-        <h3>Company Name</h3>
-        <p>this company is a company that specializes in company affairs. It is dedicated to company matters, that matter to companies. </p>
+        <h3><%= program.title %></h3>
+        <p><%= program.terms %> </p>
         <div class="program-bounty">
-          <strong>1000-2500000 MAD</strong>
+          <strong><%=program.bounty_range %> MAD</strong>
           <button>Apply</button>
         </div>
       </div>
     </div>
+
   <% end %>
 </div>
