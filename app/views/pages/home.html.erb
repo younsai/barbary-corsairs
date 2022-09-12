@@ -82,4 +82,5 @@
 <%= current_user %>
 <%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete}%>
 
-<%= link_to 'My Programs', my_programs_path %>
+<%= link_to 'Dashboard', dashboard_path %>
+<%= link_to 'New Program', dashboard_path %>
