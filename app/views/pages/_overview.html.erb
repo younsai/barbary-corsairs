@@ -1,4 +1,4 @@
-<% @my_programs = Program.where('company_id = ?', current_user.company) %>
+<% @my_reports = Report.where('expert_id = ?', current_user.expert) %>
 <div class="container">
   <h2 class="display-6">Overview</h2>
 
@@ -6,8 +6,8 @@
     <div class="card" style="width: 18rem; height:8rem;">
       <div class="card-body  py-auto d-flex align-items-center justify-content-center">
         <span>
-          <h5 class="card-title text-dark">Programs</h5>
-          <p class="card-text text-dark"><%= @my_programs.count %></p>
+          <h5 class="card-title text-dark">Reports</h5>
+          <p class="card-text text-dark"><%= @my_reports.count %></p>
         </span>
       </div>
     </div>
@@ -38,21 +38,21 @@
 
   </div>
   <div class="bg-white my-4 p-4 rounded-3 my-programs-table">
-    <h5 class="ps-3 text-dark">My Programs</h5>
+    <h5 class="ps-3 text-dark">My Reports</h5>
     <table class="table table-light">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Reports</th>
-          <th>Last Update</th>
+          <th>Program</th>
+          <th>Company</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
-        <% @my_programs.each do |program|%>
+        <% @my_reports.each do |report|%>
           <tr>
-            <td><%= program.title %></td>
-            <td><%= program.reports.count %></td>
-            <td><%= program.updated_at %></td>
+            <td><%= link_to report.program.title, program_report_path(report.program, report) %></td>
+            <td><%= report.program.company.company_name %></td>
+            <td><%= report.paid %></td>
           </tr>
         <% end %>
       </tbody>
