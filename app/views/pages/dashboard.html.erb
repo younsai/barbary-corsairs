@@ -1,0 +1,5 @@
+<% if current_user.expert == nil %>
+  <%= render "company-dashboard" %>
+<% elsif current_user.company == nil %>
+ <%= render "expert-dashboard" %>
+<% end %>

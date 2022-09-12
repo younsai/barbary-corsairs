@@ -9,6 +9,8 @@ class PagesController < ApplicationController
   end
 
   def contact
+  end
 
-end
+  def dasshboard
+  end
 end

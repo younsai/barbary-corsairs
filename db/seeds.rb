@@ -9,51 +9,59 @@ User.destroy_all
 Company.destroy_all
 Expert.destroy_all
 Program.destroy_all
+Report.destroy_all
 
 
-u1 = User.create(email: 'tst@tst.ma', password: '121212')
-u2 = User.create(email: 'tst2@tst.ma', password: '121212')
-u3 = User.create(email: 'tst@3tst.ma', password: '121212')
-
-Company.create(
-  company_name: "string",
-  address: "string",
-  phone_number: "12121212",
-  logo: "string",
-  user_id: u1.id
-)
-
-Company.create(
-  company_name: "string",
-  address: "string",
-  phone_number: "12121212",
-  logo: "string",
-  user_id: u2.id
-)
-
-Expert.create(
-  first_name: "said",
-  last_name: "mouslih",
-  username: "samou",
-  github_account: "github.com/samou",
-  twitter: "string",
-  cv: "string",
-  website_portfolio: "string",
-  bio: "text",
-  idendity_number: "string",
-  idendity_photo: "string",
-  user_id: u3.id
-)
-
-9.times do
-Program.create(
-  title: "the bounty",
-  terms: Faker::String.random,
-  accepted_vulnerabilities: "backdoors,sqlinjection,bruteforce",
-  excluded_vulnerabilities: "bugs",
-  vulnerability_levels: "1-10",
-  bounty_range: "100-10000 euros",
-  company: Company.all.sample
-)
-
+4.times do
+  User.create(email: Faker::Internet.email, password: '121212')
 end
+
+users = User.all
+
+companies_users = [users[0], users[2]]
+experts_users = [users[1], users[3]]
+
+companies_users.each do |company_user|
+  Company.create(
+    company_name: Faker::Company.name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.cell_phone_in_e164,
+    logo: Faker::Company.logo,
+    user: company_user
+  )
+end
+
+experts_users.each do |expert_user|
+  Expert.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Internet.username,
+    github_account: "https://github.com/younsai",
+    twitter: "https://twitter.com/#{Faker::Twitter.screen_name}",
+    cv: Faker::Internet.url,
+    website_portfolio: Faker::Internet.url,
+    bio: Faker::Lorem.paragraph,
+    idendity_number: Faker::IDNumber.invalid,
+    idendity_photo: Faker::Avatar.image(size: "50x50"),
+    user: expert_user
+  )
+end
+
+
+companies = Company.all
+expert = Expert.all
+
+companies.each do |company|
+  10.times do
+    Program.create!(title: [Faker::Company.name,  Faker::Company.industry].join(' - '),
+    terms: Faker::Lorem.paragraph,
+    company: company)
+  end
+end
+
+
+# companies.each do |company|
+#   5.times do
+#     ReportPerimeter.create(link: Faker::Internet.url(host: "#{company.company_name.downcase.gsub(" ", "-")}.com"))
+#   end
+# end
