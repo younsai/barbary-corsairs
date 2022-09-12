@@ -25,10 +25,12 @@ class ProgramsController < ApplicationController
   # POST /programs or /programs.json
   def create
     @program = Program.new(program_params)
+    @program.company = current_user.company
+    @program.save
 
     respond_to do |format|
       if @program.save
-        format.html { redirect_to program_url(@program), notice: "Program was successfully created." }
+        format.html { redirect_to program_path(@program), notice: "Program was successfully created." }
         format.json { render :show, status: :created, location: @program }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +43,7 @@ class ProgramsController < ApplicationController
   def update
     respond_to do |format|
       if @program.update(program_params)
-        format.html { redirect_to program_url(@program), notice: "Program was successfully updated." }
+        format.html { redirect_to program_path(@program), notice: "Program was successfully updated." }
         format.json { render :show, status: :ok, location: @program }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -73,6 +75,6 @@ class ProgramsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def program_params
-    params.require(:program).permit(:title)
+    params.require(:program).permit(:title, :terms, :accepted_vulnerabilities, :excluded_vulnerabilities, :vulnerability_levels, :bounty_range)
   end
 end

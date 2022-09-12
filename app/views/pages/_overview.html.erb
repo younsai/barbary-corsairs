@@ -1,0 +1,61 @@
+<% @my_programs = Program.where('company_id = ?', current_user.company) %>
+<div class="container">
+  <h2 class="display-6">Overview</h2>
+
+  <div class="company-status card-group text-center">
+    <div class="card" style="width: 18rem; height:8rem;">
+      <div class="card-body  py-auto d-flex align-items-center justify-content-center">
+        <span>
+          <h5 class="card-title text-dark">Programs</h5>
+          <p class="card-text text-dark"><%= @my_programs.count %></p>
+        </span>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; height:8rem;">
+      <div class="card-body  py-auto d-flex align-items-center justify-content-center">
+        <span>
+          <h5 class="card-title text-dark">Reports</h5>
+          <p class="card-text text-dark">13</p>
+        </span>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; height:8rem;">
+      <div class="card-body  py-auto d-flex align-items-center justify-content-center">
+        <span>
+          <h5 class="card-title text-dark">Vulnerabilities Founded</h5>
+          <p class="card-text text-dark">60</p>
+        </span>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; height:8rem;">
+      <div class="card-body  py-auto d-flex align-items-center justify-content-center">
+        <span>
+          <h5 class="card-title text-dark">Rewarded</h5>
+          <p class="card-text text-dark">60</p>
+        </span>
+      </div>
+    </div>
+
+  </div>
+  <div class="bg-white my-4 p-4 rounded-3 my-programs-table">
+    <h5 class="ps-3 text-dark">My Programs</h5>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Reports</th>
+          <th>Last Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @my_programs.each do |program|%>
+          <tr>
+            <td><%= program.title %></td>
+            <td><%= program.reports.count %></td>
+            <td><%= program.updated_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

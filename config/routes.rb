@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/my_programs', to: 'programs#my_programs', as: 'my_programs'
+  get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :programs do
     resources :reports
   end
