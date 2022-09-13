@@ -9,7 +9,8 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
+@import "pages/index";// Import page-specific CSS files here.
+@import "reports/index";
 @import "pages/about";
 @import "pages/dashboard";
 @import "programs/show";
