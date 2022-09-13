@@ -26,7 +26,13 @@
     <% end %>
     ago
   </div>
-  <%= button_to "Report", new_program_report_path(@program), method: :get %>
+  <% if user_signed_in?  %>
+    <% if !(current_user.expert.nil?) %>
+      <%= button_to "Report", new_program_report_path(@program), method: :get %>
+    <% end %>
+  <% elsif !user_signed_in? %>
+      <%= button_to "Report", new_program_report_path(@program), method: :get %>
+  <% end %>
   <hr>
   <h3>Terms</h3>
   <p><%= @program.terms %></p>
