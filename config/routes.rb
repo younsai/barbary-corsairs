@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :companies
   devise_for :users
   root to: "pages#home"
+  patch '/pay/:id', to: "reports#pay", as: 'pay'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

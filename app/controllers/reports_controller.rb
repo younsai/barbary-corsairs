@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_program, only: %i[new create edit update destroy]
-  before_action :set_report, only: %i[edit update destroy]
+  before_action :set_report, only: %i[edit update destroy pay]
 
 
   def index
@@ -39,6 +39,12 @@ class ReportsController < ApplicationController
     redirect_to programs_path, status: :see_other
   end
 
+
+  def pay
+    @report.paid = true
+    redirect_to dashboard_path, notice: "Successfully paid" if @report.save
+  end
+
   private
 
   def set_program
@@ -50,6 +56,6 @@ class ReportsController < ApplicationController
   end
 
   def report_params
-    params.require(:report).permit(:summary, :paid)
+    params.require(:report).permit(:summdeary, :paid)
   end
 end

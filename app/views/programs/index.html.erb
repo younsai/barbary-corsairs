@@ -2,15 +2,24 @@
 <h1 class="title">Programs</h1>
 
 <div class="card-wrapper">
+  <div class="input-group">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" />
+      <label class="form-label" for="form1">Search</label>
+    </div>
+    <button type="button" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
   <% @programs.each do |program| %>
     <%= link_to program_path(program), class: "text-decoration-none" do %>
-      <div class="program-card">
+      <div class="program-card" style="background-color: #DADADA;">
         <div>
-          <img src="https://ichef.bbci.co.uk/images/ic/1920x1080/p03t1sm8.jpg" alt="">
+          <%= image_tag(program.company.logo) %>
         </div>
         <div class="program-details text-dark">
-          <h3><%= program.title %></h3>
-          <p><%= program.terms %> </p>
+          <h3 class="text-truncate"><%= program.title %></h3>
+          <p class="text-truncate"><%= program.terms %> </p>
           <div class="program-bounty">
             <strong><%=program.bounty_range %> MAD</strong>
           </div>

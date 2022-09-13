@@ -4,25 +4,38 @@
   <h1 class="company-name"><%= @program.company.company_name %></h1>
   <hr>
   <h2><%= @program.title %></h2>
-  <p>Updated 1 day ago</p>
-  <%= button_to "Reports", new_program_report_path(@program), method: :get %>
+  <div>Updated
+    <% time = (-(@program.updated_at - DateTime.now).round) %>
+    <% if time > 604800 %>
+      <% days = time / 604800 %>
+      <%= days %> days
+    <% elsif time > 86400 %>
+      <% days = time / 86400 %>
+      <%= days %> days
+    <% elsif time > 3600 %>
+      <% hours = time / 3600 %>
+      <%= hours %> hours
+    <% elsif time > 3600 %>
+      <% hours = time / 3600 %>
+      <%= hours %> hours
+    <% elsif time > 60 %>
+      <% min = time / 60 %>
+      <%= min %> minutes
+    <% elsif time < 60 %>
+      <%= time %> secondes
+    <% end %>
+    ago
+  </div>
+  <%= button_to "Report", new_program_report_path(@program), method: :get %>
   <hr>
   <h3>Terms</h3>
   <p><%= @program.terms %></p>
 
   <h3>Accepted Vulnerabilities</h3>
-  <ul>
-    <li>XSS</li>
-    <li>SQL Injections</li>
-    <li>Command -line Injections</li>
-  </ul>
+  <p><%= @program.accepted_vulnerabilities %></p>
 
   <h3>Excluded Vulnerabilities</h3>
-  <ul>
-    <li>XSS</li>
-    <li>SQL Injections</li>
-    <li>Command -line Injections</li>d
-  </ul>
+  <p><%= @program.accepted_vulnerabilities %></p>
   <div class="border border-white py-4 rounded-3">
     <h5 class="ps-3">Program Scopes</h5>
     <table class="table table-dark">
@@ -57,4 +70,11 @@
       </tbody>
     </table>
   </div>
+
+  <% if current_user.company == @program.company %>
+    <h3>Reports</h3>
+    <% @program.reports.each do |report| %>
+      <li>@<%= report.expert.username %> | <%= link_to 'Accept',pay_path(report), data: { 'turbo-method' => :patch }  %></li>
+    <% end %>
+  <% end %>
 </div>
