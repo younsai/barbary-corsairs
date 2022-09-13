@@ -13,6 +13,7 @@
 @import "pages/about";
 @import "pages/dashboard";
 @import "programs/show";
+@import "components/footer";
 
 h1{
   font-family: 'Poppins';
@@ -22,8 +23,19 @@ h1{
 body {
   background: #282828;
   color: #FFFFFF;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 main {
   margin-top: 59px;
+  min-height: calc(100vh - 300px);
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
 }

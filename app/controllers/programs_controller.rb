@@ -26,16 +26,11 @@ class ProgramsController < ApplicationController
   def create
     @program = Program.new(program_params)
     @program.company = current_user.company
-    @program.save
 
-    respond_to do |format|
-      if @program.save
-        format.html { redirect_to program_path(@program), notice: "Program was successfully created." }
-        format.json { render :show, status: :created, location: @program }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @program.errors, status: :unprocessable_entity }
-      end
+    if @program.save
+      redirect_to program_path(@program), notice: "Program was successfully created."
+    else
+       render :new, status: :unprocessable_entity
     end
   end
 
@@ -52,12 +47,13 @@ class ProgramsController < ApplicationController
     end
   end
 
+
   # DELETE /programs/1 or /programs/1.json
   def destroy
     @program.destroy
 
     respond_to do |format|
-      format.html { redirect_to programs_url, notice: "Program was successfully destroyed." }
+      format.html { redirect_to programs_path, notice: "Program was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -1,0 +1,25 @@
+<%  @my_programs = Program.where('company_id = ?', current_user.company.id) %>
+
+<div class="container">
+  <div class="bg-white my-4 p-4 rounded-3 my-programs-table">
+    <h5 class="ps-3 text-dark">My Programs</h5>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Reports</th>
+          <th>Last Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @my_programs.each do |program|%>
+          <tr>
+            <td><%= link_to program.title, program_path(program) %></td>
+            <td><%= program.reports.count %></td>
+            <td><%= program.updated_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<% @my_reports = Report.where('expert_id = ?', current_user.expert) %>
+<% @my_reports = Report.where('expert_id = ?', current_user.expert.id)  %>
 <div class="container">
   <h2 class="display-6">Overview</h2>
 
@@ -8,14 +8,6 @@
         <span>
           <h5 class="card-title text-dark">Reports</h5>
           <p class="card-text text-dark"><%= @my_reports.count %></p>
-        </span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem; height:8rem;">
-      <div class="card-body  py-auto d-flex align-items-center justify-content-center">
-        <span>
-          <h5 class="card-title text-dark">Reports</h5>
-          <p class="card-text text-dark">13</p>
         </span>
       </div>
     </div>
@@ -52,7 +44,13 @@
           <tr>
             <td><%= link_to report.program.title, program_report_path(report.program, report) %></td>
             <td><%= report.program.company.company_name %></td>
-            <td><%= report.paid %></td>
+            <td>
+              <% if report.paid %>
+                <div style="width: 25px; height: 25px;" class= "bg-success rounded-circle"></div>
+              <% else %>
+                <div style="width: 25px; height: 25px;" class= "bg-secondary rounded-circle"></div>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
