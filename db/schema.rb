@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_130346) do
 
   create_table "reports", force: :cascade do |t|
     t.text "summary"
-    t.boolean "paid", default: false
+    t.string "status", default: "waiting"
     t.text "details"
     t.bigint "program_id", null: false
     t.bigint "expert_id", null: false

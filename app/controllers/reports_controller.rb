@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_program, only: %i[new create edit update destroy]
-  before_action :set_report, only: %i[edit update destroy pay]
+  before_action :set_report, only: %i[edit update destroy accept refuse]
 
 
   def index
@@ -39,10 +39,14 @@ class ReportsController < ApplicationController
     redirect_to programs_path, status: :see_other
   end
 
+  def accept
+    @report.status = 'accepted'
+    redirect_to dashboard_path, notice: "Accepted" if @report.save
+  end
 
-  def pay
-    @report.paid = true
-    redirect_to dashboard_path, notice: "Successfully paid" if @report.save
+  def refuse
+    @report.status = 'refused'
+    redirect_to dashboard_path, notice: "Refused" if @report.save
   end
 
   private
