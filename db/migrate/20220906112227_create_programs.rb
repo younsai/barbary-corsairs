@@ -14,3 +14,4 @@ class CreatePrograms < ActiveRecord::Migration[7.0]
     add_column :programs, :bounty_range, :string
   end
 end
+

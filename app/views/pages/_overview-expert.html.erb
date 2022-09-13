@@ -45,8 +45,10 @@
             <td><%= link_to report.program.title, program_report_path(report.program, report) %></td>
             <td><%= report.program.company.company_name %></td>
             <td>
-              <% if report.paid %>
+              <% if report.status == 'accepted' %>
                 <div style="width: 25px; height: 25px;" class= "bg-success rounded-circle"></div>
+              <% elsif report.status == 'refused'%>
+                <div style="width: 25px; height: 25px;" class= "bg-danger rounded-circle"></div>
               <% else %>
                 <div style="width: 25px; height: 25px;" class= "bg-secondary rounded-circle"></div>
               <% end %>
