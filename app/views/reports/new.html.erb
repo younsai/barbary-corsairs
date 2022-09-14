@@ -2,6 +2,7 @@
   <h1>Report</h1>
   <%= simple_form_for [@program, @report] do |f| %>
     <%= f.input :summary %>
+    <%= f.input :details %>
     <%= f.button :submit %>
   <% end %>
 </div>

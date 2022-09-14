@@ -15,6 +15,7 @@ class ScopesController < ApplicationController
   # POST /scopes or /scopes.json
   def create
     @scope = Scope.new(scope_params)
+    @scope.program = @program
 
     respond_to do |format|
       if @scope.save
@@ -51,6 +52,7 @@ class ScopesController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_scope
     @scope = Scope.find(params[:id])
