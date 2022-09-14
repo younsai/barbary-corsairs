@@ -28,9 +28,9 @@ class ProgramsController < ApplicationController
     @program.company = current_user.company
 
     if @program.save
-      redirect_to program_path(@program), notice: "Program was successfully created."
+      redirect_to new_program_scope_path(@program), notice: "Program was successfully created."
     else
-       render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +38,7 @@ class ProgramsController < ApplicationController
   def update
     respond_to do |format|
       if @program.update(program_params)
-        format.html { redirect_to program_path(@program), notice: "Program was successfully updated." }
+        format.html { redirect_to new_program_scope_path(@program), notice: "Program was successfully updated." }
         format.json { render :show, status: :ok, location: @program }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -46,7 +46,6 @@ class ProgramsController < ApplicationController
       end
     end
   end
-
 
   # DELETE /programs/1 or /programs/1.json
   def destroy

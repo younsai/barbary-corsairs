@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :reports
   end
 
+  resources :programs do
+    resources :scopes, except: %i[index]
+  end
+
   get "/about", to: "pages#about", as: 'about'
   get "/contact", to: "pages#ontact", as: 'contact'
   resources :programs
@@ -15,6 +19,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   patch '/accept/:id', to: "reports#accept", as: 'accept'
   patch '/refuse/:id', to: "reports#refuse", as: 'refuse'
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

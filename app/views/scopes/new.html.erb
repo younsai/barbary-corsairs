@@ -1,0 +1,15 @@
+<h1>New scope</h1>
+
+<%# <%= render "form", scope: @scope %>
+
+<%= simple_form_for [@program, @scope] do |f| %>
+  <%= f.input :link %>
+  <%= f.input :scope_type %>
+  <%= f.button :submit %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to scopes", program_scopes_path %>
+</div>
