@@ -71,10 +71,12 @@
     </table>
   </div>
 
-  <% if current_user.company == @program.company %>
-    <h3>Reports</h3>
-    <% @program.reports.each do |report| %>
-      <li>@<%= report.expert.username %> | <%= link_to 'Accept',pay_path(report), data: { 'turbo-method' => :patch }  %></li>
+  <% if user_signed_in? %>
+    <% if  current_user.company == @program.company %>
+      <h3>Reports</h3>
+      <% @program.reports.each do |report| %>
+        <li>@<%= report.expert.username %> | <%= link_to 'Accept',accept_path(report), data: { 'turbo-method' => :patch }  %> | <%= link_to 'Refuse',refuse_path(report), data: { 'turbo-method' => :patch }  %></li>
+      <% end %>
     <% end %>
   <% end %>
 
