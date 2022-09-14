@@ -1,0 +1,58 @@
+.rd-wrapper{
+  margin-top: 120px;
+  padding: 24px 0;
+  border: 1px solid white;
+  border-radius: 16px;
+
+  .rd-title div {
+    padding: 16px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .rd-description {
+    padding: 16px;
+  }
+
+  .rd-title span h4 {
+    padding: 16px;
+    color: #7A3BFF;
+
+  }
+
+  .rd-table{
+    padding: 16px;
+    border: 1px solid white;
+    tr {
+      border: 1px solid white;
+    }
+    th, td {
+      padding: 16px;
+    }
+    span.danger {
+      background-color: red;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    span.medium {
+      background-color: rgb(255, 213, 0);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    span.low {
+      background-color: green;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+
+}
+    .btn{
+      background-color: #7A3BFF;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 16px;
+    }
+    .btn:hover{
+      background-color: plum
+    }
