@@ -14,3 +14,49 @@
 
 }
 
+.notification {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid rgb(235,235,235);
+}
+
+.notification{
+  position: relative;
+  .notification-open a {
+    color: #999999;
+    margin-left: 16px;
+    font-size: 14px;
+    position: absolute;
+    top: 8px;
+    right: 128px;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 16px;
+    &:hover {
+      background-color: lightgray;
+      color: green;
+      font-weight: 800;
+    }
+  }
+
+  .notification-close a {
+    color: #999999;
+    margin-left: 16px;
+    font-size: 14px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 16px;
+    &:hover {
+      background-color: lightgray;
+      color: red;
+      font-weight: 800;
+    }
+  }
+
+}
