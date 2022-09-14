@@ -52,27 +52,12 @@
         </tr>
       </thead>
       <tbody>
+        <% @program_scopes.each do |scope| %>
         <tr>
-          <th>link.com</th>
-          <td>Web App</td>
-
+          <th><%= scope.link %></th>
+          <td><%= scope.scope_type %></td>
         </tr>
-        <tr>
-          <th>link.com</th>
-          <td>Mobile App</td>
-        </tr>
-        <tr>
-          <th>link.com</th>
-          <td>Larry</td>
-        </tr>
-        <tr>
-          <th>link.com</th>
-          <td>Larry</td>
-        </tr>
-        <tr>
-          <th>link.com</th>
-          <td>Larry</td>
-        </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

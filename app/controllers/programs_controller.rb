@@ -11,6 +11,7 @@ class ProgramsController < ApplicationController
 
   # GET /programs/1 or /programs/1.json
   def show
+    @program_scopes = @program.scopes
   end
 
   # GET /programs/new
