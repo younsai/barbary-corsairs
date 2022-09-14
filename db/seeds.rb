@@ -15,36 +15,35 @@ Report.destroy_all
 4.times do
   User.create(email: Faker::Internet.email, password: '121212')
 end
-  e = User.create(email: "expert@gmail.com", password: '121212')
-  c = User.create(email: 'company@gmail.com', password: '121212')
+e = User.create(email: "expert@gmail.com", password: '121212')
+c = User.create(email: 'company@gmail.com', password: '121212')
 
 users = User.all
 
 companies_users = [users[0], users[2]]
 experts_users = [users[1], users[3]]
 
+Company.create(
+  company_name: Faker::Company.name,
+  address: Faker::Address.full_address,
+  phone_number: Faker::PhoneNumber.cell_phone_in_e164,
+  logo: Faker::Company.logo,
+  user: c
+)
 
-  Company.create(
-    company_name: Faker::Company.name,
-    address: Faker::Address.full_address,
-    phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-    logo: Faker::Company.logo,
-    user: c
-  )
-
-  Expert.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    username: Faker::Internet.username,
-    github_account: "https://github.com/younsai",
-    twitter: "https://twitter.com/#{Faker::Twitter.screen_name}",
-    cv: Faker::Internet.url,
-    website_portfolio: Faker::Internet.url,
-    bio: Faker::Lorem.paragraph,
-    idendity_number: Faker::IDNumber.invalid,
-    idendity_photo: Faker::Avatar.image(size: "50x50"),
-    user: e
-  )
+Expert.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  username: Faker::Internet.username,
+  github_account: "https://github.com/younsai",
+  twitter: "https://twitter.com/#{Faker::Twitter.screen_name}",
+  cv: Faker::Internet.url,
+  website_portfolio: Faker::Internet.url,
+  bio: Faker::Lorem.paragraph,
+  idendity_number: Faker::IDNumber.invalid,
+  idendity_photo: Faker::Avatar.image(size: "50x50"),
+  user: e
+)
 
 companies_users.each do |company_user|
   Company.create(
@@ -74,7 +73,7 @@ end
 
 
 companies = Company.all
-expert = Expert.all
+# expert = Expert.all
 
 companies.each do |company|
   10.times do
@@ -82,10 +81,9 @@ companies.each do |company|
       title: [Faker::Company.name,  Faker::Company.industry].join(' - '),
       terms: Faker::Lorem.paragraph,
       company: company,
-      bounty_range: "#{[100,200,300].sample} -  #{[1000,2000,3000].sample}")
+      bounty_range: "#{[100, 200, 300].sample} -  #{[1000, 2000, 3000].sample}")
   end
 end
-
 
 # companies.each do |company|
 #   5.times do

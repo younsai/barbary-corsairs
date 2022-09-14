@@ -4,7 +4,6 @@ class CreatePrograms < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :terms
       t.references :company
-      t.references :report_perimeter
 
       t.timestamps
     end
@@ -14,4 +13,3 @@ class CreatePrograms < ActiveRecord::Migration[7.0]
     add_column :programs, :bounty_range, :string
   end
 end
-

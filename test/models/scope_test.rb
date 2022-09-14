@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ReportPerimeterTest < ActiveSupport::TestCase
+class ScopeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
