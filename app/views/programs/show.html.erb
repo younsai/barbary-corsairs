@@ -65,53 +65,57 @@
     <% if user_signed_in? && current_user.company == @program.company %>
       <hr>
       <h3>Reports</h3>
-      <% @program.reports.each do |report| %>
-        <a href="<%=program_report_path(@program, report) %>"  class="border border-0 text-decoration-none text-white">
-          <div class="notification mt-4">
-            <div class="notification-content">
-              <p>@<%= report.expert.username %></p>
-              <p>
-                <small>
-                  Posted
-                  <% time = (-(report.updated_at - DateTime.now).round) %>
-                  <% if time > 604800 %>
-                    <% days = time / 604800 %>
-                    <%= days %> days
-                  <% elsif time > 86400 %>
-                    <% days = time / 86400 %>
-                    <%= days %> days
-                  <% elsif time > 3600 %>
-                    <% hours = time / 3600 %>
-                    <%= hours %> hours
-                  <% elsif time > 3600 %>
-                    <% hours = time / 3600 %>
-                    <%= hours %> hours
-                  <% elsif time > 60 %>
-                    <% min = time / 60 %>
-                    <%= min %> minutes
-                  <% elsif time < 60 %>
-                    <%= time %> secondes
-                  <% end %>
-                  ago
-                </small>
-              </p>
+      <% if @program.reports.empty? %>
+        <p>No reports yet</p>
+      <% else %>
+        <% @program.reports.each do |report| %>
+          <a href="<%=program_report_path(@program, report) %>"  class="border border-0 text-decoration-none text-white">
+            <div class="notification mt-4">
+              <div class="notification-content">
+                <p>@<%= report.expert.username %></p>
+                <p>
+                  <small>
+                    Posted
+                    <% time = (-(report.updated_at - DateTime.now).round) %>
+                    <% if time > 604800 %>
+                      <% days = time / 604800 %>
+                      <%= days %> days
+                    <% elsif time > 86400 %>
+                      <% days = time / 86400 %>
+                      <%= days %> days
+                    <% elsif time > 3600 %>
+                      <% hours = time / 3600 %>
+                      <%= hours %> hours
+                    <% elsif time > 3600 %>
+                      <% hours = time / 3600 %>
+                      <%= hours %> hours
+                    <% elsif time > 60 %>
+                      <% min = time / 60 %>
+                      <%= min %> minutes
+                    <% elsif time < 60 %>
+                      <%= time %> secondes
+                    <% end %>
+                    ago
+                  </small>
+                </p>
 
-              <p><%= report.summary %></p>
+                <p><%= report.summary %></p>
 
-              <div class="notification-open">
-                <a data-turbo-method="patch" href="<%= accept_path(report)%>">
-                    ACCEPT <i class="fas fa-check"></i>
+                <div class="notification-open">
+                  <a data-turbo-method="patch" href="<%= accept_path(report)%>">
+                      ACCEPT <i class="fas fa-check"></i>
+                  </a>
+                </div>
+
+                <div class="notification-close">
+                  <a data-turbo-method="patch" href="<%= refuse_path(report)%>">
+                    REFUSE <i class="fas fa-xmark"></i>
                 </a>
-              </div>
-
-              <div class="notification-close">
-                <a data-turbo-method="patch" href="<%= refuse_path(report)%>">
-                  REFUSE <i class="fas fa-xmark"></i>
-              </a>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        <% end %>
       <% end %>
     <% end %>
 </div>
