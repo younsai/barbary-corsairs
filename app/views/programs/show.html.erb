@@ -3,7 +3,7 @@
 <div class="container h-25 bg-dark my-5 p-5 border border-white">
   <h1 class="company-name"><%= @program.company.company_name %></h1>
   <hr>
-  <h2><%= @program.title %></h2>
+  <h2 class="purple-font"><%= @program.title %></h2>
   <div>Updated
     <% time = (-(@program.updated_at - DateTime.now).round) %>
     <% if time > 604800 %>
@@ -34,13 +34,13 @@
       <%= button_to "Report", new_program_report_path(@program), method: :get %>
   <% end %>
   <hr>
-  <h3>Terms</h3>
+  <h3 class="purple-font">Terms</h3>
   <p><%= @program.terms %></p>
 
-  <h3>Accepted Vulnerabilities</h3>
+  <h3 class="purple-font">Accepted Vulnerabilities</h3>
   <p><%= @program.accepted_vulnerabilities %></p>
 
-  <h3>Excluded Vulnerabilities</h3>
+  <h3 class="purple-font">Excluded Vulnerabilities</h3>
   <p><%= @program.accepted_vulnerabilities %></p>
   <div class="border border-white py-4 mb-5 rounded-3">
     <h5 class="ps-3">Program Scopes</h5>
