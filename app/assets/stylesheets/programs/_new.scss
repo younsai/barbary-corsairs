@@ -1,0 +1,18 @@
+.newprogramdiv-background {
+  background: url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+  height: 815px;
+  background-size: cover;
+}
+
+.formdiv-background {
+  background-color: #3D3D3D;
+  margin-top: 128px;
+}
+.new_program input[type="text"], .new_program textarea, .new_program textarea:focus  {
+  border-bottom: 2px solid green;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background: #82828211;
+  color: #FFFFFF;
+}

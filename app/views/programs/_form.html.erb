@@ -4,13 +4,13 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
+    <div class="program-input">
       <%= f.input :title %>
       <%= f.input :terms %>
       <%= f.input :accepted_vulnerabilities %>
       <%= f.input :excluded_vulnerabilities %>
       <%= f.input :vulnerability_levels %>
-      <%= f.input :bounty_range %>
+      <%= f.input :bounty_range, placeholder: "min -max" %>
 
     </div>
 

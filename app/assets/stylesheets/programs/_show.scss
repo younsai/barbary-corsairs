@@ -23,7 +23,7 @@
 
 .notification{
   position: relative;
-  .notification-open a {
+  .notification-open a,  .notification-open p {
     color: #999999;
     margin-left: 16px;
     font-size: 14px;
@@ -41,7 +41,7 @@
     }
   }
 
-  .notification-close a {
+  .notification-close a, .notification-close p {
     color: #999999;
     margin-left: 16px;
     font-size: 14px;
