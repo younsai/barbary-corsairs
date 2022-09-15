@@ -24,10 +24,10 @@ companies_users = [users[0], users[2]]
 experts_users = [users[1], users[3]]
 
 Company.create(
-  company_name: Faker::Company.name,
-  address: Faker::Address.full_address,
-  phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-  logo: Faker::Company.logo,
+  company_name: "OCP",
+  address: "2-4, Rue Al Abtal, Hay Erraha 20200, Casablanca, Maroc - BP Maârif 5196",
+  phone_number: "+212522230025 ",
+  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/OCP_Group.svg/803px-OCP_Group.svg.png",
   user: c
 )
 
@@ -45,7 +45,7 @@ Expert.create(
   user: e
 )
 
-c1 = Company.create(
+Company.create(
   company_name: "Le Wagon",
   address: "380 Bd Brahim Roudani, Casablanca",
   phone_number: " +212662293983",
@@ -55,21 +55,11 @@ c1 = Company.create(
 
 Company.create(
   company_name: "inwi",
-  address: Faker::Address.full_address,
-  phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-  logo: Faker::Company.logo,
-  user: company_user
+  address: "Siège inwi, Lot La Colline 2, Sidi Maarouf, Casablanca",
+  phone_number: "+212529000000",
+  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Logo_inwi.svg/2560px-Logo_inwi.svg.png",
+  user: companies_users[1]
 )
-
-companies_users.each do |company_user|
-  Company.create(
-    company_name: Faker::Company.name,
-    address: Faker::Address.full_address,
-    phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-    logo: Faker::Company.logo,
-    user: company_user
-  )
-end
 
 experts_users.each do |expert_user|
   Expert.create(
@@ -153,3 +143,20 @@ end
 #     ReportPerimeter.create(link: Faker::Internet.url(host: "#{company.company_name.downcase.gsub(" ", "-")}.com"))
 #   end
 # end
+
+Program.all.each do |program|
+  Scope.create(
+    link: "www.#{program.company.company_name.downcase.gsub(" ", "-")}.ma",
+    scope_type: "Website",
+    program: program)
+
+  Scope.create(
+    link: "www.#{program.company.company_name.downcase.gsub(" ", "-")}.ma/contact",
+    scope_type: "Mail App",
+    program: program)
+
+    Scope.create(
+      link: "app.#{program.company.company_name.downcase.gsub(" ", "-")}.ma",
+      scope_type: "Web App",
+      program: program)
+end

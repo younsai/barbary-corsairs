@@ -6,7 +6,7 @@ class ProgramsController < ApplicationController
 
   # GET /programs or /programs.json
   def index
-    @programs = Program.all
+    @programs = Program.all.shuffle
   end
 
   # GET /programs/1 or /programs/1.json
