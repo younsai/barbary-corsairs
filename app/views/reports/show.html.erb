@@ -1,38 +1,14 @@
 <div class="rd-wrapper container">
   <div class="rd-title">
-    <span><h4><strong>Wiza Group<strong></h4></span>
+    <span><h4><strong><%= @report.program.company.company_name %><strong></h4></span>
       <div>
         <h3><%= @report.program.title %></h3>
       </div>
   </div>
 
   <div class="rd-description">
-    <span><h4>Report Details</h4></span>
-     <p><%= @report.details %></p>
+    <span><h4 style="font-weight: bolder">Report Details</h4></span>
+     <p style="font-weight: 200;"><%= @report.details %></p>
   </div>
 
-  <div class=" mx-5 border border-white">
-    <table class="table table-dark zero-margin">
-      <thead>
-        <tr>
-          <th>Scope</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>sqlite injection </td>
-          <td>Description Description Description DescriptionDescription Description</td>
-        </tr>
-          <tr>
-          <td>Insecure design</td>
-          <td>Description Description Description DescriptionDescription Description</td>
-        </tr>
-        <tr>
-          <td>Vulnerable/outdated configurations</td>
-          <td>Description Description Description DescriptionDescription Description</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
