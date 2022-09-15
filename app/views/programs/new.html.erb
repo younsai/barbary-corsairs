@@ -1,11 +1,18 @@
-<div class="container">
-  <h1>New program</h1>
+<div class="d-flex container justify-content-between align-items-center flex-wrap">
+  <div class="container w-50">
+    <h1>New program</h1>
 
-  <%= render "form", program: @program %>
+    <%= render "form", program: @program %>
 
-  <br>
+    <br>
 
-  <div>
-    <%= link_to "Back to programs", programs_path %>
+    <div>
+      <%= link_to "Back to programs", programs_path %>
+    </div>
+  </div>
+
+
+  <div class="w-50 newprogramdiv-background">
+
   </div>
 </div>
