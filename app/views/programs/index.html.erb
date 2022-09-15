@@ -15,9 +15,7 @@
   <% @programs.each do |program| %>
     <%= link_to program_path(program), class: "text-decoration-none" do %>
       <div class="program-card" style="background-color: #DADADA;">
-        <div>
-          <%= image_tag(program.company.logo) %>
-        </div>
+          <%= image_tag program.company.logo, class: "card-img-top" %>
         <div class="program-details text-dark">
           <h3 class="text-truncate"><%= program.title %></h3>
           <p class="text-truncate"><%= program.terms %> </p>
