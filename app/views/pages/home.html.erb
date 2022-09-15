@@ -40,25 +40,25 @@
       <div class="card col-lg-3" id="reis">
         <h5>THE REIS</h5>
         <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_1_kublew.png" alt="">
-        <h6>Name</h6>
+        <h6>Jalal</h6>
       </div>
 
       <div class="card col-lg-3">
         <h5></h5>
         <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_2_psffte.png" alt="">
-        <h6>Name</h6>
+        <h6>Nadia</h6>
       </div>
 
       <div class="card col-lg-3">
         <h5></h5>
         <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_3_o4wrtf.png" alt="">
-        <h6>Name</h6>
+        <h6>Youssef</h6>
       </div>
 
       <div class="card col-lg-3">
         <h5></h5>
         <img src="https://res.cloudinary.com/younsai/image/upload/v1662558669/image_6_z4xonh.png" alt="">
-        <h6>Name</h6>
+        <h6>Fatima</h6>
       </div>
     </div>
   </div>
@@ -66,10 +66,9 @@
   <div class="container py-5">
       <h1 class="display-5 fw-bold lh-1 mb-3 purple-font">Companies on the platform</h1>
       <div class="row d-flex justify-content-between pt-5">
-        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
-        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
-        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
-        <div class="col-lg-3 pt-3"><img src="https://res.cloudinary.com/younsai/image/upload/v1662563840/company-placeholder_x3axig.jpg" alt=""></div>
+        <% Company.all.each do |company| %>
+          <div class="col-lg-3 pt-3 d-flex align-items-center"><img src="<%= company.logo %>" alt=""></div>
+        <% end %>
       </div>
   </div>
 
