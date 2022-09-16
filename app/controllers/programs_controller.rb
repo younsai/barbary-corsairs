@@ -6,7 +6,15 @@ class ProgramsController < ApplicationController
 
   # GET /programs or /programs.json
   def index
-    @programs = Program.all.shuffle
+    if(!params[:query].nil?)
+     @programs = Program.where(
+      "title ilike ? OR accepted_vulnerabilities ilike ?",
+      "%#{params[:query]}%",
+      "%#{params[:query]}%").shuffle
+    else
+      @programs = Program.all.shuffle
+    end
+
   end
 
   # GET /programs/1 or /programs/1.json
