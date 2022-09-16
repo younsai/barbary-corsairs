@@ -53,10 +53,10 @@ Company.create(
 )
 
 Company.create(
-  company_name: "inwi",
-  address: "Siège inwi, Lot La Colline 2, Sidi Maarouf, Casablanca",
+  company_name: "Khobz Dar",
+  address: "380 Bd Brahim Roudani, Casablanca",
   phone_number: "+212529000000",
-  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Logo_inwi.svg/2560px-Logo_inwi.svg.png",
+  logo: "https://khoubzdar.herokuapp.com/assets/KHOBZ%20Logo-9a037fdcdbbbaca96a328e85291ada95f8d00eb5eda31e1781d925b31f48fa4f.png",
   user: companies_users[1]
 )
 
