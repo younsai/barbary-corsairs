@@ -1,6 +1,6 @@
 
 
-<div class="container h-25 bg-dark my-5 p-5 border border-white">
+<div class="container h-25 bg-dark my-5 p-5 border border-white report-wrapper">
   <h1 class="company-name"><%= @program.company.company_name %></h1>
   <hr>
   <h3 class="purple-font">Program title</h3>
@@ -29,10 +29,10 @@
   </div>
   <% if user_signed_in?  %>
     <% if !(current_user.expert.nil?) %>
-      <%= button_to "Report", new_program_report_path(@program), method: :get %>
+      <%= button_to "Report", new_program_report_path(@program), method: :get, class: "report-btn" %>
     <% end %>
   <% elsif !user_signed_in? %>
-      <%= button_to "Report", new_program_report_path(@program), method: :get %>
+      <%= button_to "Report", new_program_report_path(@program), method: :get, class: "report-btn" %>
   <% end %>
   <hr>
   <h3 class="purple-font">Terms</h3>
